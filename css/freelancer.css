@@ -141,6 +141,12 @@ section h2 {
   margin: 0;
   font-size: 3em;
 }
+div.error,
+section.error {
+  background: #ff7777;
+  color: white;
+}
+div.success,
 section.success {
   background: #18bc9c;
   color: white;

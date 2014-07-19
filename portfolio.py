@@ -17,17 +17,41 @@
 import os
 import jinja2
 import webapp2
+import json
+from google.appengine.api import mail
 
 JINJA_ENVIRONMENT = jinja2.Environment(
     loader=jinja2.FileSystemLoader(os.path.dirname(__file__)),
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+
 class MainPage(webapp2.RequestHandler):
   def get(self):
     template = JINJA_ENVIRONMENT.get_template('index.html')
     self.response.write(template.render({}))
 
+
+class SendMail(webapp2.RequestHandler):
+  def post(self):
+    self.response.headers['Content-Type'] = 'application/json'
+
+    name = self.request.get("name")
+    email = self.request.get("email")
+    message_body = self.request.get("message-body")
+    print message_body
+    message = mail.EmailMessage(sender="no-reply@iepsen.com", subject="Contact from site")
+
+    message.to = "Marcelo Iepsen <iepsen@gmail.com>"
+    message.body = "Mensagem recebida de %s <%s>:\n\n %s" % (name, email, message_body)
+
+    if message.is_initialized():
+      message.send()
+      self.response.out.write(json.dumps({'result': True}))
+    else:
+      self.response.out.write(json.dumps({'result': False}))
+
 app = webapp2.WSGIApplication([
   ('/', MainPage),
+  ('/send-mail', SendMail),
 ], debug=True)

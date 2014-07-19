@@ -24,3 +24,24 @@ $(function() {
 $('body').scrollspy({
     target: '.navbar-fixed-top'
 })
+
+$("#contact-form").submit(function (event) {
+  $('#form-contact-error, #form-contact-success').addClass('hidden').slideUp();
+
+  var name = $('input[name=name]');
+  var email = $('input[name=email]');
+  var message = $('textarea[name=message-body]');
+
+  if (name.val().length == 0 || email.val().length == 0 || message.val().length == 0) {
+    $('#form-contact-error').removeClass('hidden').slideDown();
+    return false;
+  }
+
+  $.post('/send-mail', $(this).serialize(), function (response) {
+    if (response.result)
+      $('#form-contact-success').removeClass('hidden').slideDown();
+    else
+      $('#form-contact-error').removeClass('hidden').slideDown();
+  });
+  return false;
+});
