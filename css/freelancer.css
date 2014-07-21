@@ -159,6 +159,9 @@ section.success {
     padding-top: 75px;
   }
 }
+#about .container .row p {
+  text-align: justify;
+}
 #portfolio .portfolio-item {
   margin: 0 0 15px;
   right: 0;
@@ -200,6 +203,49 @@ section.success {
   margin: 0;
 }
 #portfolio * {
+  z-index: 2;
+}
+.modal-body .portfolio-items {
+  margin: 0 0 15px;
+  right: 0;
+}
+.modal-body .portfolio-items .item-details li a {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.modal-body .portfolio-items .item-details li a .caption {
+  background: rgba(24, 188, 156, 0.9);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+.modal-body .portfolio-items .item-details li a .caption:hover {
+  opacity: 1;
+}
+.modal-body .portfolio-items .item-details li a .caption .caption-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -7px;
+  color: white;
+}
+.modal-body .portfolio-items .item-details li a .caption .caption-content i {
+  margin-top: -12px;
+}
+.modal-body .portfolio-items .item-details li a .caption .caption-content h3,
+.modal-body .portfolio-items .item-details li a .caption .caption-content h4 {
+  margin: 0;
+}
+.modal-body * {
   z-index: 2;
 }
 @media (min-width: 767px) {

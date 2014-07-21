@@ -6,6 +6,7 @@ $(function() {
             scrollTop: $($anchor.attr('href')).offset().top
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
+        ga('send', 'event', 'navigation', 'click', $anchor.attr('href'));
     });
 });
 
@@ -34,14 +35,27 @@ $("#contact-form").submit(function (event) {
 
   if (name.val().length == 0 || email.val().length == 0 || message.val().length == 0) {
     $('#form-contact-error').removeClass('hidden').slideDown();
+    ga('send', 'event', 'contact', 'error', 'empty field(s)');
     return false;
   }
 
   $.post('/send-mail', $(this).serialize(), function (response) {
-    if (response.result)
+    if (response.result) {
       $('#form-contact-success').removeClass('hidden').slideDown();
-    else
+      $('#contact-form').get(0).reset();
+      ga('send', 'event', 'contact', 'success', email.val());
+    } else {
       $('#form-contact-error').removeClass('hidden').slideDown();
+      ga('send', 'event', 'contact', 'error', email.val());
+    }
   });
   return false;
+});
+
+$('.modal').on('show.bs.modal', function (e) {
+  ga('send', 'event', 'portfolio', 'open', $(this).find('.modal-body h2').text());
+});
+
+$('.modal').on('hide.bs.modal', function (e) {
+  ga('send', 'event', 'portfolio', 'close', $(this).find('.modal-body h2').text());
 });
