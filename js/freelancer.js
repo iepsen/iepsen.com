@@ -59,3 +59,21 @@ $('.modal').on('show.bs.modal', function (e) {
 $('.modal').on('hide.bs.modal', function (e) {
   ga('send', 'event', 'portfolio', 'close', $(this).find('.modal-body h2').text());
 });
+
+$('.portfolio-items .item-details li a').on('click', function () {
+    var modal = $(this).parent().parent().parent().parent();
+    var link = $(this).attr('href');
+    var items = $(this).parent().parent().find('li');
+
+    items.removeClass('active');
+    $(this).parent().addClass('active');
+
+
+    modal.find('.current img').animate({'opacity': 0});
+    var image = $('<img src="'+ link +'" />')
+    image.load(function () {
+        modal.find('.current > img').attr('src', link);
+        modal.find('.current > img').animate({'opacity': 1});
+    });
+    return false;
+});
