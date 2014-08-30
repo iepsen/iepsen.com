@@ -1,12 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta name="description" content="I'm a System Analyst since 2004 with Data Processing Technology background. With more than 10 years experience in development I was working on frontend and backend. Currently I'm working with iOS mobile applications. I worked for 3 years at CUBOCC, one of the largest advertising agencies in Brazil. Now I working at Globosat, the largest television programmer in Latin America.">
+    <meta name="description" content="System Analyst since 2004 with Data Processing Technology background. Over a decade juggling with frontend and backend. To spice things up, I'm now also working with iOS mobile applications.">
     <meta name="author" content="Marcelo Iepsen">
+
+    <meta property="og:title" content="Marcelo Iepsen, System Analyst" />
+    <meta property="og:description" content="System Analyst since 2004 with Data Processing Technology background. Over a decade juggling with frontend and backend. To spice things up, I'm now also working with iOS mobile applications." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://www.iepsen.com/" />
+    <meta property="og:image" content="http://www.iepsen.com/img/profile.png" />
 
     <title>Marcelo Iepsen, System Analyst</title>
 
@@ -94,16 +100,18 @@
                 </div>
             </div>
             <div class="row">
+                {% for project in projects %}
                 <div class="col-sm-4 portfolio-item">
-                    <a href="#portfolio-mordomia" class="portfolio-link" data-toggle="modal">
+                    <a href="#portfolio-{{ project.id }}" class="portfolio-link" data-toggle="modal">
                         <div class="caption">
                             <div class="caption-content">
                                 <i class="fa fa-search-plus fa-3x"></i>
                             </div>
                         </div>
-                        <img src="img/portfolio/mordomia/1.png" class="img-responsive" alt="" />
+                        <img src="img/portfolio/{{ project.id }}/{{ project.cover }}" class="img-responsive" alt="" />
                     </a>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </section>
@@ -204,7 +212,8 @@
     </div>
 
     <!-- Portfolio Modals -->
-    <div class="portfolio-modal modal fade" id="portfolio-mordomia" tabindex="-1" role="dialog" aria-hidden="true">
+    {% for project in projects %}
+    <div class="portfolio-modal modal fade" id="portfolio-{{ project.id }}" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-content">
             <div class="close-modal" data-dismiss="modal">
                 <div class="lr">
@@ -216,7 +225,7 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Mordomia</h2>
+                            <h2>{{ project.name }}</h2>
                             <hr class="star-primary">
                             <div class="current">
                                 <div class="loader">
@@ -224,66 +233,43 @@
                                     <div class="circle 2nd"></div>
                                     <div class="circle 3rd"></div>
                                 </div>
-                                <img src="http://lorempixel.com/1020/1020/" class="img-responsive img-centered" alt="">
+                                <img src="img/portfolio/{{ project.id }}/{{ project.samples.0 }}" class="img-responsive img-centered" alt="">
                             </div>
                             <div class="portfolio-items">
                               <ul class="list-inline item-details">
+                                {% for sample in project.samples %}
+                                {% if loop.first %}
                                 <li class="col-lg-3 active">
-                                  <a href="http://lorempixel.com/1020/1020/?1">
-                                    <div class="caption">
-                                      <div class="caption-content">
-                                        <i class="fa fa-search-plus fa-2x"></i>
-                                      </div>
-                                    </div>
-                                    <img src="http://lorempixel.com/1020/1020/?1" class="img-responsive" alt="" />
-                                  </a>
-                                </li>
+                                {% else %}
                                 <li class="col-lg-3">
-                                  <a href="http://lorempixel.com/1020/1020/?2">
+                                {% endif %}
+                                  <a href="img/portfolio/{{ project.id }}/{{ sample }}">
                                     <div class="caption">
                                       <div class="caption-content">
                                         <i class="fa fa-search-plus fa-2x"></i>
                                       </div>
                                     </div>
-                                    <img src="http://lorempixel.com/1020/1020/?2" class="img-responsive" alt="" />
+                                    <img src="img/portfolio/{{ project.id }}/{{ sample }}" class="img-responsive" alt="" />
                                   </a>
                                 </li>
-                                <li class="col-lg-3">
-                                  <a href="http://lorempixel.com/1020/1020/?3">
-                                    <div class="caption">
-                                      <div class="caption-content">
-                                        <i class="fa fa-search-plus fa-2x"></i>
-                                      </div>
-                                    </div>
-                                    <img src="http://lorempixel.com/1020/1020/?3" class="img-responsive" alt="" />
-                                  </a>
-                                </li>
-                                <li class="col-lg-3">
-                                  <a href="http://lorempixel.com/1020/1020/?4">
-                                    <div class="caption">
-                                      <div class="caption-content">
-                                        <i class="fa fa-search-plus fa-2x"></i>
-                                      </div>
-                                    </div>
-                                    <img src="http://lorempixel.com/1020/1020/?4" class="img-responsive" alt="" />
-                                  </a>
-                                </li>
+                                {% endfor %}
                               </ul>
                             </div>
-                            <p>Mordomia is a delivery service made by Madre Mia!. This project is running on Python and Django instance at <a href="http://getupcloud.com/">Getup Cloud</a>.</p>
+                            <p>{{ project.description|safe }}</p>
+                            <p>Project URL: <a href="{{ project.url }}">{{ project.url }}</a></p>
+                            <br><br>
                             <ul class="list-inline item-details">
-                                <li>Client: <strong><a href="http://madremia.la">Madre Mia!</a></strong></li>
-                                <li>Date: <strong><a href="http://madremia.la">December 2013</a></strong></li>
-                                <li>Service: <strong><a href="http://madremia.la">Web Development</a></strong></li>
+                                {% for attribute, value in project.attributes.iteritems() %}
+                                <li>{{ attribute|e }}: <strong>{{ value|e }}</strong></li>
+                                {% endfor %}
                             </ul>
-                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
+    {% endfor %}
 
     <script src="js/jquery-1.10.2.js"></script>
     <script src="js/bootstrap.min.js"></script>
