@@ -227,6 +227,8 @@
                         <div class="modal-body">
                             <h2>{{ project.name }}</h2>
                             <hr class="star-primary">
+                            <p>{{ project.description|safe }}</p>
+                            <p>Project URL: <a href="{{ project.url }}">{{ project.url }}</a></p>
                             <div class="current">
                                 <div class="loader">
                                     <div class="circle 1st"></div>
@@ -255,9 +257,7 @@
                                 {% endfor %}
                               </ul>
                             </div>
-                            <p>{{ project.description|safe }}</p>
-                            <p>Project URL: <a href="{{ project.url }}">{{ project.url }}</a></p>
-                            <br><br>
+
                             <ul class="list-inline item-details">
                                 {% for attribute, value in project.attributes.iteritems() %}
                                 <li>{{ attribute|e }}: <strong>{{ value|e }}</strong></li>
