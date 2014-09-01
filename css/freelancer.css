@@ -206,7 +206,9 @@ section.success {
   z-index: 2;
 }
 .modal-body > .current {
+    float: left;
     position: relative;
+    margin-top: 30px;
 }
 
 .modal-body .portfolio-items {
@@ -216,7 +218,7 @@ section.success {
   display: block;
   position: relative;
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
 }
 .modal-body .portfolio-items .item-details li a .caption {
   background: rgba(24, 188, 156, 0.9);
@@ -384,12 +386,13 @@ footer .footer-below {
 .portfolio-modal .modal-content p {
   text-align: left;
   float: left;
+  margin: 10px 0;
 }
 .portfolio-modal .modal-content h2 {
   margin: 0;
   font-size: 3em;
 }
-.portfolio-modal .modal-content div img {
+.portfolio-modal .modal-content div > img {
     position: relative;
     margin-bottom: 30px;
     z-index: 2;
