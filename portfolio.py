@@ -19,6 +19,7 @@ import os
 import jinja2
 import webapp2
 import json
+import codecs
 from google.appengine.api import mail
 
 JINJA_ENVIRONMENT = jinja2.Environment(
@@ -45,10 +46,10 @@ class SendMail(webapp2.RequestHandler):
   def post(self):
     self.response.headers['Content-Type'] = 'application/json'
 
-    name = self.request.get("name")
-    email = self.request.get("email")
-    message_body = self.request.get("message-body")
-    print message_body
+    name = unicode(self.request.get("name"))
+    email = unicode(self.request.get("email"))
+    message_body = unicode(self.request.get("message-body"))
+
     message = mail.EmailMessage(sender="no-reply@iepsen.com", subject="Contact from site")
 
     message.to = "Marcelo Iepsen <iepsen@gmail.com>"
