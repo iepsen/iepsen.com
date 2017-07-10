@@ -12,7 +12,7 @@ h2, h3 { margin-bottom: 10px; font-size: 30px; }
 h2 { font-size: 30px; }
 h3 { font-size: 20px; }
 
-.content { padding: 20px; }
+.content { padding: 10px 20px; }
 .content p { width: 860px; margin: 0 auto; margin-bottom: 30px; font-size: 20px; line-height: 1.2em; }
 
 section { padding-top: 80px; }
