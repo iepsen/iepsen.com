@@ -37,8 +37,8 @@ header .menu li { margin-left: 20px; line-height: 60px; display: inline-flex; }
 .navigate-left { left: 10%; }
 .navigate-right { right: 10%; }
 
-.dark-primary-color    { background: #424242; }
-.default-primary-color { background: #6f79a8; }
+.dark-primary-color    { background: #000; }
+.default-primary-color { background: #392a43; }
 .light-primary-color   { background: #B3E5FC; }
 .accent-color          { background: #536DFE; }
 .primary-text-color, :visited    { color: #d1d9ff; }
