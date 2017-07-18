@@ -10,7 +10,7 @@ class Work extends Component {
 						<div className="work-container">
 							<h2 className="secondary-text-color">Globosat Play for Connected TVs</h2>
 							<h3 className="secondary-text-color">The product</h3>
-							<p className="secondary-text-color">Globosat Play provides on demand videos from Globosat channels to warch through Samsung, LG, Sony, Panasonic and Philips devices.</p>
+							<p className="secondary-text-color">Globosat Play provides on demand videos from Globosat channels to watch through Samsung, LG, Sony, Panasonic and Philips devices.</p>
 							
 							<h3 className="secondary-text-color">Role</h3>
 							<p className="secondary-text-color">As a leader, I'm responsible to get things done. Acting with Product Owner, we discuss what to do in next release, tracking services that could block features, following the healthy of product and be sure that customer experience is great.</p>
