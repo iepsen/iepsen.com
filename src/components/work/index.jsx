@@ -27,9 +27,9 @@ class Work extends Component {
 								<li><strong>Developers:</strong> Gabriel Dantas, Luan Garcia, Rafael Magalhães, Tiago Rocha, Raphael Guimarães, Klaus Kazlauskas and Ricardo Lino</li>
 							</ul>
 							<h3 className="secondary-text-color">Screens</h3>
-							<img src="/work/home.png" />
-							<img src="/work/menu.png" />
-							<img src="/work/episodes.png" />
+							<img src="/work/home.png" alt="Home" />
+							<img src="/work/menu.png" alt="Menu" />
+							<img src="/work/episodes.png" alt="Episode List" />
 						</div>
 					</div>
 				</div>
