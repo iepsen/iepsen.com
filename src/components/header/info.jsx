@@ -5,7 +5,7 @@ class Info extends Component {
     return (
     	<div>
     		<a href="/"><img src="/profile.png" width="60" alt="Marcelo Iepsen" /></a>
-    		<h1><a href="/" className="secondary-text-color">Marcelo Iepsen</a></h1>
+    		<h1><a href="/" className="third-text-color">Marcelo Iepsen</a></h1>
     	</div>
     )
   }
