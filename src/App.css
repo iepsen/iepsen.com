@@ -40,7 +40,7 @@ footer { padding: 5px; }
 .navigate-right { right: 10%; }
 
 .dark-primary-color           { background: #604b6d; }
-.default-primary-color        { background: #fff; }
+.default-primary-color        { background: #ededed; }
 .light-primary-color          { background: #B3E5FC; }
 .accent-color                 { background: #536DFE; }
 .primary-text-color, :visited { color: #604b6d; }
