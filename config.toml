@@ -1,4 +1,4 @@
-baseurl                 = "http://192.68.1.72:1313/"   # Your domain name. Must end with "/"
+baseurl                 = "https://iepsen.netlify.com/"   # Your domain name. Must end with "/"
 languageCode            = "en-us"
 title                   = "Marcelo Iepsen, IT Specialist"
 theme                   = "introduction"
