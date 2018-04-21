@@ -1,0 +1,8 @@
+.card-content { font-size: 1.45rem; }
+.card-image .image a img { border-radius: 0; border: 0; box-shadow: none; }
+.modal-card { width: 70%; }
+.modal-card img { border-radius: 0; border: 0; box-shadow: none; }
+
+@media only screen and (max-width: 600px) {
+    .markdown p { text-align: justify; }
+}
