@@ -1,16 +1,17 @@
 ---
 title: "About"
-date: 2017-03-09T13:19:25+08:00
+date: 2018-12-16T12:58:00-02:00
 ---
 
 14+ years of experience in software development, software architecture and agile methodologies. Continuous improvement oriented, yet has ability to guide teams to deliver better products.
 
 I had opportunity to work with frontend, backend and mobile along my career. So, I became a fullstack developer with team leadership ability. Agile methodologies tools and software architecture are my target to ensure quality on what we are doing.
 
-I'm a Tech Lead focused on big screen devices, responsible for Connected TV development apps, PoC for Apple TV and Android TV.
+I'm an IT Specialist responsible for Connected TV apps.
 
 ### Experience
-* **Tech Lead**, Globosat, Rio de Janeiro, Rio de Janeiro — 2013–Present
+* **IT Specialist**, Globo.com, Rio de Janeiro, Rio de Janeiro — 2018–Present
+* **Tech Lead**, Globosat, Rio de Janeiro, Rio de Janeiro — 2013–2018
 * **CTO**, Safari Produtora de Mídia, Pelotas, Rio Grande do Sul — 2012–2013
 * **Systems Analyst**, Globosat, Rio de Janeiro, Rio de Janeiro — 2010–2012
 * **Software Developer**, CUBOCC, São Paulo, São Paulo — 2007–2010
