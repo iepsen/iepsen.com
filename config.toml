@@ -50,9 +50,5 @@ googleAnalytics       = "UA-53009932-1"
     icon = "linkedin"
 
 [[params.social]]
-    url = "https://facebook.com/iepsen"
-    icon = "facebook"
-
-[[params.social]]
     url = "https://twitter.com/iepsen"
     icon = "twitter"
