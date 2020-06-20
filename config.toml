@@ -11,9 +11,9 @@ pygmentsUseClasses = true
 
 [params]
     author = "Marcelo Iepsen"
-    description = "Senior Software Engineer"
+    description = "Software Engineer"
     keywords = "developer,personal,ctv,smart tv"
-    info = "Senior Software Engineer"
+    info = "Software Engineer"
     avatarurl = "images/avatar.jpg"
 
     hideCredits = false
