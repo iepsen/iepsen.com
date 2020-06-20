@@ -1,5 +1,5 @@
 baseurl = "https://iepsen.com/"
-title = "Marcelo Iepsen"
+title = "Marcelo Iepsen - Software Engineer"
 theme = "coder-portfolio"
 publishDir = "docs"
 DefaultContentLanguage = "en"
